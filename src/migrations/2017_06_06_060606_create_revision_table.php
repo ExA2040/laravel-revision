@@ -20,7 +20,7 @@ class CreateRevisionTable extends Migration {
       $table->integer('object_id');
 
       $table->longText('attr')->nullable();
-      
+
       $table->index('class_name')->nullable();
       $table->index('object_id')->nullable();
 
@@ -36,7 +36,7 @@ class CreateRevisionTable extends Migration {
    */
   public function down()
   {
-    Schema::drop('seos');
+    Schema::drop('revisions');
   }
 
 }

@@ -11,25 +11,14 @@ trait RevisionTrait {
 
   public static function bootRevisionTrait()
   {
-    static::updated(function($item){
-      // Index the item
+    static::updated(function($model){
+      $attr = $model->getAttributes();
+
+      $class_name = snake_case(get_class($model));
+      \ExA2040\LaravelRevision\Revision::create(array('class_name' => $class_name, 'object_id' => $attr['id'], 'attr' => $attr));
+
     });
   }
 
-  protected static function boot(){
-    parent::boot();
-    static::updated(function ($model) {
-      $changes = $model->isDirty() ? $model->getDirty() : false;
-      if($changes)
-      {
-        foreach($changes as $attr => $value)
-        {
-          //Activity::log("updated product $attr from {$model->getOriginal($attr)} to {$model->$attr}");
-        }
-      }
-
-    });
-
-  }
 
 }

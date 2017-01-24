@@ -6,12 +6,12 @@ trait RevisionTrait {
 
   public function revisions()
   {
-    return $this->hasMany('\ExA2040\LaravelViewCounter\Counter', 'object_id')->where('class_name', snake_case(get_class($this)));
+    return $this->hasMany('\ExA2040\LaravelRevision\Revision', 'object_id')->where('class_name', snake_case(get_class($this)));
   }
 
   public static function bootRevisionTrait()
   {
-    static::created(function($item){
+    static::updated(function($item){
       // Index the item
     });
   }

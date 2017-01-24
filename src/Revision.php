@@ -1,6 +1,6 @@
 <?php
 
-namespace ExA2040\LaravelSEO;
+namespace ExA2040\LaravelRevision;
 use Illuminate\Database\Eloquent\Model;
 
 class Revision extends Model {

@@ -1,0 +1,24 @@
+{
+  "name": "exa2040/laravel-revision",
+  "description": "revision extension for your laravel project.",
+  "license": "MIT",
+  "homepage": "https://github.com/ExA2040/laravel-revision",
+  "keywords": [ "revision" ],
+  "authors": [
+    {
+      "name": "Ehsan Alinezhad",
+      "email": "Ehsan_Alinezhad@ymail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src"
+    ],
+    "psr-4": {
+      "ExA2040\\LaravelViewCounter\\": "src/"
+    }
+  }
+}
